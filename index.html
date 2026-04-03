@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>「経営者は声が命！」ボイトレ講座＆談話会｜小粋な社長サロン 5月イベント</title>
+    <meta name="description" content="一流トレーナーによるビジネスをブーストするボイスメイクと経営談話の2時間。「経営者は声が命！」ボイトレ講座＆談話会。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Dela+Gothic+One&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --pink:    #800000;
+            --orange:  #B8860B;
+            --yellow:  #A4760A;
+            --purple:  #8B0000;
+            --cyan:    #696969;
+            --bg:      #FFFFFF;
+            --bg2:     #F9F6F4;
+            --card:    #FFFFFF;
+            --white:   #2F2F2F;
+            --light:   #696969;
+            --muted:   #8C8C8C;
+            --grad1: linear-gradient(135deg, #B8860B, #800000);
+            --grad2: linear-gradient(135deg, #696969, #800000);
+            --tr: 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--bg);
+            color: var(--white);
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 300;
+            line-height: 1.9;
+            overflow-x: hidden;
+            font-size: 17px;
+        }
+        img { display:block; max-width:100%; height:auto; }
+        .inner { max-width: 900px; margin:0 auto; padding:0 28px; }
+
+        /* ── ラベル ── */
+        .tag {
+            display: inline-block;
+            background: var(--grad1);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            padding: 5px 18px;
+            border-radius: 99px;
+            margin-bottom: 18px;
+        }
+        .tag.purple { background: var(--grad2); }
+
+        /* ── セクションタイトル ── */
+        .sec-ttl {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(26px,4.5vw,46px);
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 12px;
+            letter-spacing: -.01em;
+        }
+        .sec-ttl .hl { background: var(--grad1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .sec-ttl .hl2 { background: var(--grad2); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+        .sec-sub { font-size:17px; color:var(--muted); margin-bottom:52px; }
+
+        /* ── CTAボタン ── */
+        .btn {
+            display: inline-block;
+            background: var(--grad1);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-decoration: none;
+            padding: 20px 52px;
+            border-radius: 99px;
+            border: none;
+            cursor: pointer;
+            transition: transform var(--tr), box-shadow var(--tr);
+            box-shadow: 0 8px 32px rgba(128,0,0,.4);
+        }
+        .btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 16px 48px rgba(128,0,0,.55); }
+        .btn.lg { font-size:20px; padding:24px 68px; }
+        .btn.purple-btn { background: var(--grad2); box-shadow: 0 8px 32px rgba(139,0,0,.4); }
+        .btn.purple-btn:hover { box-shadow: 0 16px 48px rgba(139,0,0,.55); }
+
+        /* ── フェードイン ── */
+        .fi { opacity:0; transform:translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+        .fi.show { opacity:1; transform:translateY(0); }
+        .fi.d1 { transition-delay:.1s; }
+        .fi.d2 { transition-delay:.2s; }
+        .fi.d3 { transition-delay:.3s; }
+        .fi.d4 { transition-delay:.4s; }
+
+        /* ══════════════════════════════════
+           ① ヒーロー
+        ══════════════════════════════════ */
+        #hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
+        /* 写真①：images/hero.jpg（またはimages/hero_karaoke.jpg）
+           推奨：1920×1080px以上　カラオケ・ライブ・楽しい雰囲気 */
+        #hero-bg {
+            position: absolute; inset:0;
+            background: linear-gradient(160deg,#FFF3E0 0%,#FFFFFF 50%,#E3F2FD 100%);
+        }
+        #hero-bg img {
+            position:absolute; inset:0; width:100%; height:100%;
+            object-fit:cover; object-position:center; display:block;
+        }
+        #hero-overlay {
+            position:absolute; inset:0;
+            background: linear-gradient(to bottom, rgba(255,255,255,.65) 0%, rgba(255,255,255,.85) 100%);
+            z-index:1;
+        }
+        /* 背景に浮かぶ光のオーブ */
+        .hero-orb {
+            position:absolute; border-radius:50%; pointer-events:none; z-index:0;
+            filter: blur(80px);
+        }
+        .hero-orb.o1 { width:500px;height:500px; background:rgba(128,0,0,.18); top:-10%;left:-10%; animation:float1 8s ease-in-out infinite; }
+        .hero-orb.o2 { width:400px;height:400px; background:rgba(139,0,0,.15); bottom:-5%;right:-5%; animation:float2 10s ease-in-out infinite; }
+        .hero-orb.o3 { width:300px;height:300px; background:rgba(105,105,105,.12); top:30%;right:15%; animation:float1 7s ease-in-out infinite reverse; }
+        @keyframes float1 { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-30px) scale(1.05);} }
+        @keyframes float2 { 0%,100%{transform:translateY(0) scale(1.05);} 50%{transform:translateY(20px) scale(1);} }
+
+        .hero-body {
+            position:relative; z-index:2;
+            padding:60px 28px;
+            max-width:860px;
+        }
+        .hero-event-tag {
+            display:inline-flex; align-items:center; gap:10px;
+            background: rgba(0,0,0,.04);
+            border: 1px solid rgba(0,0,0,.1);
+            backdrop-filter: blur(12px);
+            border-radius:99px;
+            padding:9px 22px;
+            font-family:'Outfit',sans-serif;
+            font-size:13px;
+            font-weight:600;
+            letter-spacing:.15em;
+            color:var(--yellow);
+            margin-bottom:32px;
+        }
+        .hero-event-tag .dot { width:8px;height:8px;border-radius:50%;background:var(--pink);animation:pulse 1.5s ease-in-out infinite; }
+        @keyframes pulse { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.4);opacity:.7;} }
+
+        .hero-catch {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(38px,7.5vw,88px);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -.02em;
+            margin-bottom: 20px;
+        }
+        .hero-catch .line1 { color:#333333; }
+        .hero-catch .line2 {
+            background: var(--grad1);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .hero-sub {
+            font-size: clamp(16px,2.2vw,20px);
+            color: var(--light);
+            opacity:.85;
+            margin-bottom: 44px;
+            line-height: 1.8;
+        }
+        .hero-meta {
+            display:inline-flex; flex-wrap:wrap;
+            align-items:center; justify-content:center;
+            gap:10px 24px;
+            background: rgba(0,0,0,.03);
+            border:1px solid rgba(0,0,0,.12);
+            backdrop-filter:blur(10px);
+            border-radius:16px;
+            padding:20px 36px;
+            margin-bottom:48px;
+        }
+        .hero-meta-item {
+            font-family:'Outfit',sans-serif;
+            font-size:18px; font-weight:700;
+            color:var(--yellow);
+            letter-spacing:.04em;
+        }
+        .hero-meta-sep { color:rgba(0,0,0,.15); font-size:20px; }
+        #hero-scroll {
+            position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
+            z-index:2; display:flex; flex-direction:column; align-items:center; gap:8px;
+        }
+        #hero-scroll span { font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.3em; color:rgba(0,0,0,.4); }
+        .scroll-line { width:1px; height:40px; background:linear-gradient(to bottom,var(--pink),transparent); animation:scrl 2s ease-in-out infinite; }
+        @keyframes scrl { 0%,100%{opacity:.3;transform:scaleY(.5);} 50%{opacity:1;transform:scaleY(1);} }
+
+        /* ══════════════════════════════════
+           ② キャッチ帯（写真なし）
+        ══════════════════════════════════ */
+        #catch-band {
+            background: var(--grad1);
+            padding: 36px 28px;
+            text-align:center;
+            overflow:hidden;
+            position:relative;
+        }
+        .catch-band-txt {
+            font-family:'Outfit',sans-serif;
+            font-size: clamp(22px,4vw,38px);
+            font-weight:900;
+            color:#FFFFFF;
+            letter-spacing:-.01em;
+        }
+
+        /* ══════════════════════════════════
+           ③ 共感
+        ══════════════════════════════════ */
+        #empathy {
+            background: var(--bg2);
+            padding:100px 0;
+            text-align:center;
+        }
+        .empathy-lead {
+            font-size: clamp(19px,3vw,28px);
+            font-weight:400;
+            line-height:2.1;
+            color:var(--light);
+        }
+        .empathy-lead .big {
+            font-family:'Outfit',sans-serif;
+            font-size:1.4em;
+            font-weight:900;
+            display:block;
+            background:var(--grad1);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .empathy-lead .big2 {
+            font-family:'Outfit',sans-serif;
+            font-size:1.15em;
+            font-weight:800;
+            color:var(--yellow);
+        }
+
+        /* ══════════════════════════════════
+           ④ 写真ギャラリー帯
+        ══════════════════════════════════ */
+        #photo-band {
+            padding:72px 0;
+            background: var(--bg);
+        }
+        .photo-grid {
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr;
+            gap:14px;
+            margin-top:40px;
+        }
+        @media(max-width:680px){
+            .photo-grid { grid-template-columns:1fr 1fr; }
+        }
+        .ph-box {
+            border-radius:16px;
+            overflow:hidden;
+            position:relative;
+            background:#F3F4F6;
+            aspect-ratio:4/3;
+        }
+        .ph-box img {
+            position:absolute; inset:0;
+            width:100%; height:100%;
+            object-fit:cover; display:block;
+            transition:transform .5s ease;
+        }
+        .ph-box:hover img { transform:scale(1.05); }
+        .ph-label {
+            position:absolute; bottom:12px; left:12px;
+            background:rgba(0,0,0,.6);
+            backdrop-filter:blur(8px);
+            border-radius:8px;
+            padding:4px 12px;
+            font-size:12px;
+            color:rgba(255,255,255,.8);
+            font-weight:500;
+            z-index:1;
+        }
+
+        /* ══════════════════════════════════
+           ⑤ コンセプト
+        ══════════════════════════════════ */
+        #concept {
+            background: var(--bg2);
+            padding:100px 0;
+        }
+        .concept-2col {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:56px;
+            align-items:center;
+            margin-top:48px;
+        }
+        @media(max-width:700px){ .concept-2col { grid-template-columns:1fr; } }
+        .concept-img-box {
+            border-radius:20px; overflow:hidden;
+            position:relative;
+            background:#F3F4F6;
+        }
+        .concept-img-box img { width:100%;height:100%;object-fit:cover;display:block;border-radius:20px; }
+        .concept-body {
+            font-size:17px;
+            color:var(--muted);
+            line-height:2.1;
+        }
+        .concept-body strong { color:var(--white); font-weight:500; }
+
+        /* ══════════════════════════════════
+           ⑥ 体験内容 3カラム
+        ══════════════════════════════════ */
+        #experience {
+            background: var(--bg);
+            padding:100px 0;
+            text-align:center;
+        }
+        .exp-grid {
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:22px;
+            margin-top:56px;
+        }
+        @media(max-width:680px){ .exp-grid { grid-template-columns:1fr; } }
+        .exp-card {
+            background: var(--card);
+            border:1px solid rgba(0,0,0,.08);
+            border-radius:20px;
+            padding:40px 24px;
+            text-align:center;
+            transition:transform var(--tr), border-color var(--tr), box-shadow var(--tr);
+            position:relative;
+            overflow:hidden;
+        }
+        .exp-card::before {
+            content:'';
+            position:absolute; inset:0;
+            background: var(--grad1);
+            opacity:0;
+            transition:opacity var(--tr);
+        }
+        .exp-card:hover { transform:translateY(-6px); border-color:rgba(128,0,0,.4); box-shadow:0 20px 60px rgba(128,0,0,.15); }
+        .exp-card:hover::before { opacity:.05; }
+        .exp-card > * { position:relative; z-index:1; }
+        .exp-icon { height:72px; margin:0 auto 16px; display:block; width:auto; object-fit:contain; }
+        .exp-num {
+            font-family:'Outfit',sans-serif; font-size:11px; font-weight:700;
+            letter-spacing:.3em; color:var(--pink);
+            margin-bottom:10px;
+        }
+        .exp-ttl {
+            font-family:'Outfit',sans-serif;
+            font-size:20px; font-weight:800;
+            color:var(--white);
+            margin-bottom:12px;
+        }
+        .exp-body { font-size:15px; color:var(--muted); line-height:1.9; }
+
+        /* ══════════════════════════════════
+           ⑦ トレーナー紹介
+        ══════════════════════════════════ */
+        #trainer {
+            background: var(--bg2);
+            padding:100px 0;
+        }
+        .trainer-wrap {
+            display:grid;
+            grid-template-columns:280px 1fr;
+            gap:56px;
+            align-items:start;
+            margin-top:52px;
+        }
+        @media(max-width:720px){ .trainer-wrap { grid-template-columns:1fr; } }
+        /* 写真②：images/trainer.jpg（縦長推奨）指導中シーン */
+        .trainer-photo {
+            border-radius:20px; overflow:hidden;
+            position:relative;
+            background:#F3F4F6;
+            aspect-ratio:3/4;
+        }
+        .trainer-photo img { width:100%;height:100%;object-fit:cover;object-position:center top;display:block; }
+        .trainer-badge-new {
+            position:absolute; top:16px; left:16px;
+            background:var(--grad1);
+            color:#FFFFFF;
+            font-family:'Outfit',sans-serif;
+            font-size:11px; font-weight:700;
+            letter-spacing:.1em;
+            padding:6px 14px;
+            border-radius:99px;
+        }
+        .trainer-name {
+            font-family:'Outfit',sans-serif;
+            font-size:clamp(36px,5vw,56px);
+            font-weight:900;
+            color:var(--white);
+            letter-spacing:-.02em;
+            margin-bottom:6px;
+        }
+        .trainer-role {
+            font-size:15px;
+            background:var(--grad2);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            font-weight:700;
+            letter-spacing:.1em;
+            margin-bottom:28px;
+        }
+        .trainer-stats {
+            display:flex; gap:18px; flex-wrap:wrap;
+            margin-bottom:28px;
+        }
+        .stat {
+            flex:1; min-width:120px;
+            background:var(--card);
+            border:1px solid rgba(0,0,0,.1);
+            border-radius:14px; padding:18px 20px;
+        }
+        .stat-num {
+            font-family:'Outfit',sans-serif;
+            font-size:30px; font-weight:900;
+            background:var(--grad1);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            line-height:1; margin-bottom:4px;
+        }
+        .stat-label { font-size:13px; color:var(--muted); }
+        .trainer-body { font-size:16px; color:var(--muted); line-height:2.05; margin-bottom:28px; }
+        .trainer-body strong { color:var(--white); }
+        .price-box-new {
+            background: linear-gradient(135deg,rgba(128,0,0,.12),rgba(139,0,0,.08));
+            border:1px solid rgba(128,0,0,.25);
+            border-radius:16px; padding:24px 28px;
+        }
+        .price-special { font-size:13px; color:var(--pink); font-weight:700; letter-spacing:.1em; margin-bottom:8px; }
+        .price-val {
+            font-family:'Outfit',sans-serif;
+            font-size:38px; font-weight:900;
+            color:var(--white);
+        }
+        .price-note { font-size:14px; color:var(--muted); margin-top:4px; }
+
+        /* ══════════════════════════════════
+           ⑧ ベネフィット
+        ══════════════════════════════════ */
+        #benefit {
+            background: var(--bg);
+            padding:100px 0;
+        }
+        .benefit-grid {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:18px;
+            margin-top:52px;
+        }
+        @media(max-width:580px){ .benefit-grid { grid-template-columns:1fr; } }
+        .benefit-card {
+            background:var(--card);
+            border:1px solid rgba(0,0,0,.08);
+            border-radius:16px;
+            padding:28px;
+            display:flex; gap:18px; align-items:flex-start;
+            transition:transform var(--tr), border-color var(--tr);
+        }
+        .benefit-card:hover { transform:translateY(-4px); border-color:rgba(139,0,0,.35); }
+        .benefit-num {
+            font-family:'Outfit',sans-serif;
+            font-size:28px; font-weight:900;
+            background:var(--grad2);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            line-height:1; flex-shrink:0; width:36px;
+        }
+        .benefit-ttl { font-size:17px; font-weight:500; color:var(--white); margin-bottom:4px; }
+        .benefit-body { font-size:15px; color:var(--muted); line-height:1.8; }
+
+        /* ══════════════════════════════════
+           ⑨ 開催概要
+        ══════════════════════════════════ */
+        #overview {
+            background: var(--bg2);
+            padding:100px 0;
+        }
+        .ov-card {
+            background:var(--card);
+            border:1px solid rgba(0,0,0,.1);
+            border-radius:20px;
+            overflow:hidden;
+            margin-top:52px;
+        }
+        .ov-head {
+            background: var(--grad1);
+            padding:22px 40px;
+            font-family:'Outfit',sans-serif;
+            font-size:14px; font-weight:700;
+            letter-spacing:.2em; color:#fff;
+        }
+        .ov-row { display:grid; grid-template-columns:140px 1fr; border-bottom:1px solid rgba(0,0,0,.06); }
+        .ov-row:last-child { border-bottom:none; }
+        @media(max-width:560px){ .ov-row { grid-template-columns:1fr; } }
+        .ov-label {
+            padding:22px 28px; font-size:13px;
+            background:var(--grad2);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            font-weight:700; letter-spacing:.1em;
+            border-right:1px solid rgba(0,0,0,.06);
+        }
+        @media(max-width:560px){ .ov-label { padding:18px 20px 4px; border-right:none; } }
+        .ov-val { padding:22px 32px; font-size:17px; color:var(--light); }
+        @media(max-width:560px){ .ov-val { padding:4px 20px 18px; } }
+        .ov-val.price-val-ov {
+            font-family:'Outfit',sans-serif;
+            font-size:28px; font-weight:900;
+            background:var(--grad1);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .ov-val.price-val-ov small {
+            font-family:'Noto Sans JP',sans-serif;
+            font-size:14px; color:var(--muted);
+            -webkit-text-fill-color:var(--muted);
+            margin-left:8px;
+        }
+
+        /* ══════════════════════════════════
+           ⑩ 限定性
+        ══════════════════════════════════ */
+        #limited {
+            background: var(--bg);
+            padding:100px 0;
+            text-align:center;
+        }
+        .limited-num {
+            font-family:'Outfit',sans-serif;
+            font-size:clamp(40px,10vw,80px);
+            font-weight:900;
+            line-height:1;
+            background:var(--grad1);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            margin-bottom:8px;
+        }
+        .limited-sub {
+            font-size:clamp(20px,3.5vw,30px);
+            font-weight:700;
+            color:var(--white); margin-bottom:14px;
+        }
+        .limited-note { font-size:16px; color:var(--muted); margin-bottom:52px; }
+
+        /* ══════════════════════════════════
+           ⑪ クロージング
+        ══════════════════════════════════ */
+        #closing {
+            position:relative;
+            padding:120px 0;
+            text-align:center;
+            overflow:hidden;
+            background:var(--bg2);
+        }
+        .closing-orb {
+            position:absolute; border-radius:50%; pointer-events:none;
+            filter:blur(100px);
+        }
+        .closing-orb.c1 { width:600px;height:600px; background:rgba(128,0,0,.13); top:-20%;left:-10%; }
+        .closing-orb.c2 { width:500px;height:500px; background:rgba(139,0,0,.12); bottom:-15%;right:-5%; }
+        .closing-inner { position:relative; z-index:1; }
+        .closing-copy {
+            font-family:'Outfit',sans-serif;
+            font-size:clamp(30px,6vw,64px);
+            font-weight:900;
+            line-height:1.3;
+            margin-bottom:20px;
+        }
+        .closing-copy .c-white { color:var(--white); }
+        .closing-copy .c-grad {
+            background:var(--grad1);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .closing-sub { font-size:18px; color:var(--muted); margin-bottom:56px; }
+
+        /* ── フッター ── */
+        footer {
+            background:#F9FAFB;
+            padding:40px 24px;
+            text-align:center;
+            border-top:1px solid rgba(0,0,0,.06);
+        }
+        footer p { font-size:13px; color:var(--muted); }
+
+        @media(max-width:500px){
+            .hero-meta { flex-direction:column; gap:10px; padding:20px; }
+            .hero-meta-sep { display:none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ① ヒーロー -->
+<section id="hero">
+    <div id="hero-bg">
+        <!-- ▼ ヒーロー写真。images/hero.jpg または images/hero_karaoke.jpg を配置
+             推奨サイズ：1920×1080px以上　カラオケ・ライブ・楽しい雰囲気の写真 -->
+        <img src="images/hero_karaoke.jpg" alt="ボーカルレッスンナイト" onerror="this.style.display='none'" />
+    </div>
+    <div id="hero-overlay"></div>
+    <div class="hero-orb o1"></div>
+    <div class="hero-orb o2"></div>
+    <div class="hero-orb o3"></div>
+
+    <div class="hero-body fi" id="hero-content">
+        <div class="hero-event-tag">
+            <span class="dot"></span>
+            KOIKINA SHACHO SALON &nbsp;—&nbsp; VOCAL & TALK
+        </div>
+        <h1 class="hero-catch" style="white-space: nowrap;">
+            <span class="line1" style="font-size:0.75em;">経営者は</span><span class="line2">声が命！</span>
+        </h1>
+        <p class="hero-sub" style="color:var(--light); font-weight:500;">
+            一流トレーナーによる<br>
+            ビジネスをブーストするボイスメイクと経営談話の2時間
+        </p>
+        <div class="hero-meta">
+            <span class="hero-meta-item">2026年 5月21日（木）</span>
+            <span class="hero-meta-sep">｜</span>
+            <span class="hero-meta-item">19:00 – 21:00</span>
+            <span class="hero-meta-sep">｜</span>
+            <span class="hero-meta-item">パセラリゾート銀座</span>
+        </div>
+        <a href="https://forms.gle/h1ikGT8kiuhDPLkR8" class="btn" id="hero-cta">▶ 参加する</a>
+    </div>
+
+    <div id="hero-scroll">
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+
+<!-- ② キャッチ帯 -->
+<div id="catch-band">
+    <p class="catch-band-txt">ボイトレ講座 ＆ 談話会</p>
+</div>
+
+
+<!-- ③ 共感 -->
+<section id="empathy">
+    <div class="inner">
+        <div class="empathy-lead fi">
+            声はビジネスパースンにとって<span class="big2">侮れない武器です。</span>
+        </div>
+        <div class="empathy-lead fi d1" style="margin-top:32px; line-height: 1.8; opacity: 0.9;">
+            ・社員が話を聴いてない気がする<br>
+            ・取引先との交渉が捗々しくない<br>
+            ・スピーチがうまくできない
+        </div>
+        <div class="empathy-lead fi d2" style="margin-top:32px;">
+            それは、声のせいかもしれません。
+        </div>
+        <div class="empathy-lead fi d3" style="margin-top:32px; font-size:clamp(16px,2.2vw,22px);">
+            数々の企業研修も手掛ける一線のボイストレーナーの指導のもと、<br>
+            <strong style="color:var(--white);">経営者の「伝わる声」</strong>を手に入れましょう！<br>
+            そしてボイトレで磨いた声で、会員同士の談話タイムを楽しみます。
+        </div>
+    </div>
+</section>
+
+
+<!-- ④ 写真ギャラリー帯 -->
+<section id="photo-band">
+    <div class="inner">
+        <div style="text-align:center;">
+            <span class="tag">Gallery</span>
+            <h2 class="sec-ttl" style="text-align:center;">こんな時間になります</h2>
+        </div>
+        <div class="photo-grid">
+
+            <!-- メイン写真（大） -->
+            <!-- ▼ 写真③：images/group.jpg　グループで歌う楽しい雰囲気 -->
+            <div class="ph-box ph-main fi d1">
+                <img src="images/group.jpg" alt="みんなで歌う" onerror="this.style.display='none'" />
+                <span class="ph-label">充実の談話タイム</span>
+            </div>
+
+            <!-- 会場写真 -->
+            <!-- ▼ 写真④：images/venue.jpg　パセラリゾート銀座の会場 -->
+            <div class="ph-box fi d2">
+                <img src="images/venue.jpg" alt="会場" onerror="this.style.display='none'" />
+                <span class="ph-label">パセラリゾート銀座</span>
+            </div>
+
+            <!-- レッスン写真 -->
+            <!-- ▼ 写真⑤：images/lesson.jpg　レッスン中の様子 -->
+            <div class="ph-box fi d3">
+                <img src="images/lesson.jpg" alt="レッスン" onerror="this.style.display='none'" />
+                <span class="ph-label">「伝わる声」を手に入れる</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ⑤ コンセプト -->
+<section id="concept">
+    <div class="inner">
+        <span class="tag purple">Event Concept</span>
+        <h2 class="sec-ttl">経営者の<span class="hl">「伝わる声」</span>を<br>手に入れる</h2>
+
+        <div class="concept-2col">
+            <!-- ▼ 写真⑥：経営者のスピーチ写真 -->
+            <div class="concept-img-box fi">
+                <img src="images/speech_ceo.png" alt="スピーチする経営者" onerror="this.style.display='none'" style="min-height:320px;" />
+            </div>
+
+            <div class="fi d1">
+                <p class="concept-body">
+                    声はビジネスパースンにとって<strong>侮れない武器です。</strong><br><br>
+                    あなたの思いが相手に伝わらないのは、声のせいかもしれません。<br>
+                    数々の企業研修も手掛ける一線のボイストレーナー島村公二氏の指導のもと、経営者の<strong>「伝わる声」</strong>を手に入れましょう！<br><br>
+                    そしてボイトレで磨いた声で、会員の皆さん同士の<strong>談話タイム</strong>を楽しみます。<br>
+                    ビジネスをブーストする、特別な2時間をお過ごしください。
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ⑥ 体験内容 -->
+<section id="experience">
+    <div class="inner">
+        <span class="tag">What You Experience</span>
+        <h2 class="sec-ttl">この夜の<span class="hl2">3つの体験</span></h2>
+        <p class="sec-sub">楽しいだけじゃない、確かな変化がある夜。</p>
+
+        <div class="exp-grid">
+            <div class="exp-card fi d1">
+                <img src="images/icon_1.png" alt="" class="exp-icon" />
+                <p class="exp-num">01</p>
+                <h3 class="exp-ttl">ボイスメイク</h3>
+                <p class="exp-body">ビジネスをブーストさせる<br>あなたの「伝わる声」を<br>手に入れます。</p>
+            </div>
+            <div class="exp-card fi d2">
+                <img src="images/icon_2.png" alt="" class="exp-icon" />
+                <p class="exp-num">02</p>
+                <h3 class="exp-ttl">一流プロの直接指導</h3>
+                <p class="exp-body">数々の企業研修も手掛ける<br>ボイストレーナー島村公二氏の<br>本格指導。</p>
+            </div>
+            <div class="exp-card fi d3">
+                <img src="images/icon_3.png" alt="" class="exp-icon" />
+                <p class="exp-num">03</p>
+                <h3 class="exp-ttl">経営者同士の談話</h3>
+                <p class="exp-body">ボイトレで磨いた声で<br>会員の皆さんとの充実した<br>談話タイムを楽しみます。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ⑦ トレーナー紹介 -->
+<section id="trainer">
+    <div class="inner">
+        <span class="tag">Trainer</span>
+        <h2 class="sec-ttl">担当トレーナー紹介</h2>
+
+        <div class="trainer-wrap">
+            <!-- ▼ 写真②：images/trainer.jpg　トレーナーKozy氏の写真（縦長推奨：600×800px以上） -->
+            <div class="fi">
+                <div class="trainer-photo">
+                    <img src="images/trainer.jpg" alt="トレーナー Kozy" onerror="this.style.display='none'" />
+                    <span class="trainer-badge-new">VOCAL TRAINER</span>
+                </div>
+            </div>
+
+            <div class="fi d1">
+                <h3 class="trainer-name">Kozy</h3>
+                <p class="trainer-role">プロボーカルトレーナー</p>
+                <div class="trainer-stats">
+                    <div class="stat">
+                        <div class="stat-num">25<span style="font-size:16px;font-weight:400;">年</span></div>
+                        <div class="stat-label">指導キャリア</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">10,000<span style="font-size:14px;font-weight:400;">人+</span></div>
+                        <div class="stat-label">累計指導人数</div>
+                    </div>
+                </div>
+                <p class="trainer-body">
+                    声帯解剖学に基づく独自メソッドで25年間、<strong>1万人以上のボーカルを指導</strong>。プロミュージシャンから経営者まで幅広い層から絶大な信頼を獲得。<br><br>
+                    <strong>通常は40分15,000円</strong>でレッスンを行う実力派トレーナー。<br><br>
+                    「声の使い方を変えると、人生が変わる」をモットーに、<strong>その場で実感できる指導スタイル</strong>にこだわる。
+                </p>
+                <div class="price-box-new">
+                    <p class="price-special">🎉 今回 特別体験価格</p>
+                    <div class="price-val">¥12,000</div>
+                    <p class="price-note">レッスン・カラオケ込み</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ⑧ ベネフィット -->
+<section id="benefit">
+    <div class="inner" style="text-align:center;">
+        <span class="tag purple">Benefits</span>
+        <h2 class="sec-ttl">参加すると<span class="hl">こうなる！</span></h2>
+        <p class="sec-sub">楽しんでいたら、いつの間にか変わってる。</p>
+
+        <div class="benefit-grid">
+            <div class="benefit-card fi d1">
+                <div class="benefit-num">01</div>
+                <div>
+                    <div class="benefit-ttl">「伝わる声」を手に入れる</div>
+                    <div class="benefit-body">発声・共鳴力・表現力を鍛え、相手に真っ直ぐ届く声を手に入れます。</div>
+                </div>
+            </div>
+            <div class="benefit-card fi d2">
+                <div class="benefit-num">02</div>
+                <div>
+                    <div class="benefit-ttl">話す自信がつく</div>
+                    <div class="benefit-body">声への自信がプレゼンやスピーチ、交渉の質を底上げしてくれます。</div>
+                </div>
+            </div>
+            <div class="benefit-card fi d3">
+                <div class="benefit-num">03</div>
+                <div>
+                    <div class="benefit-ttl">会員の皆さんとの談話</div>
+                    <div class="benefit-body">磨いた声を使って会話し合うことで、新しいビジネスのひらめきが生まれるかもしれません。</div>
+                </div>
+            </div>
+            <div class="benefit-card fi d4">
+                <div class="benefit-num">04</div>
+                <div>
+                    <div class="benefit-ttl">ビジネスのブーストに直結</div>
+                    <div class="benefit-body">声という「武器」を手に入れることで、明日からの仕事の成果が大きく変わります。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ⑨ 開催概要 -->
+<section id="overview">
+    <div class="inner">
+        <span class="tag">Event Details</span>
+        <h2 class="sec-ttl">開催概要</h2>
+        <div class="ov-card fi d1">
+            <div class="ov-head">VOCAL & TALK NIGHT — May 2026</div>
+            <div class="ov-row">
+                <div class="ov-label">日時</div>
+                <div class="ov-val">2026年 5月21日（木）<br>19:00 – 21:00</div>
+            </div>
+            <div class="ov-row">
+                <div class="ov-label">会場</div>
+                <div class="ov-val">🏢 パセラリゾート銀座<br><span style="font-size:14px;color:var(--muted);">（詳細は参加者にご連絡）</span></div>
+            </div>
+            <div class="ov-row">
+                <div class="ov-label">会費</div>
+                <div class="ov-val price-val-ov">¥12,000<small>（レッスン・カラオケ込）</small></div>
+            </div>
+            <div class="ov-row">
+                <div class="ov-label">定員</div>
+                <div class="ov-val">少人数制・先着順<br><span style="font-size:14px;color:var(--pink);font-weight:700;">※ 定員になり次第締切</span></div>
+            </div>
+            <div class="ov-row">
+                <div class="ov-label">対象</div>
+                <div class="ov-val">経営者・個人事業主・役員</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ⑩ 限定性 -->
+<section id="limited">
+    <div class="inner">
+        <div class="limited-num fi">少人数</div>
+        <div class="limited-sub fi d1">定員になり次第、受付終了！</div>
+        <p class="limited-note fi d2">少人数だからこそ一人ひとりへの指導が濃い。早めのご申込みを。</p>
+        <div class="fi d3">
+            <a href="https://forms.gle/h1ikGT8kiuhDPLkR8" class="btn lg" id="limited-cta">今すぐ席を確保する</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ⑪ クロージング -->
+<section id="closing">
+    <div class="closing-orb c1"></div>
+    <div class="closing-orb c2"></div>
+    <div class="inner">
+        <div class="closing-inner">
+            <span class="tag fi">Closing</span>
+            <div class="closing-copy fi d1">
+                <span class="c-white" style="color:var(--white);">「伝わる声」で、</span><br>
+                <span class="c-grad">ビジネスをブーストさせる。</span>
+            </div>
+            <p class="closing-sub fi d2">一流トレーナーの指導と充実した談話タイムで、声の可能性を解き放とう。</p>
+            <div class="fi d3">
+                <a href="https://forms.gle/h1ikGT8kiuhDPLkR8" class="btn lg" id="closing-cta">今すぐ席を確保する</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <p>© 2026 小粋な社長サロン. All rights reserved.</p>
+</footer>
+
+<script>
+    /* ── スクロールフェードイン ── */
+    const els = document.querySelectorAll('.fi');
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('show'); obs.unobserve(e.target); }
+        });
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
+
+    // ヒーローはすぐ表示
+    const hc = document.getElementById('hero-content');
+    if (hc) setTimeout(() => hc.classList.add('show'), 150);
+
+    /* ── 写真ロード時にプレースホルダーを非表示 ── */
+    function hidePh(imgSelector, phId) {
+        const img = document.querySelector(imgSelector);
+        const ph  = document.getElementById(phId);
+        if (!img || !ph) return;
+        const hide = () => { if (img.naturalWidth > 0) ph.style.display = 'none'; };
+        if (img.complete) { hide(); } else { img.addEventListener('load', hide); }
+    }
+    hidePh('.trainer-photo img', 'trainer-ph');
+    hidePh('#ph-group + img, .ph-box.ph-main img', 'ph-group');
+    hidePh('.ph-box:nth-child(2) img', 'ph-venue');
+    hidePh('.ph-box:nth-child(3) img', 'ph-lesson');
+    hidePh('.concept-img-box img', 'ph-concept');
+
+    /*
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    【写真の差し替え方法】
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    images/ フォルダに以下のファイルを配置するだけ：
+
+    ① images/hero_karaoke.jpg（または hero.jpg）
+       ヒーロー背景：1920×1080px以上 カラオケ・ライブ感
+
+    ② images/trainer.jpg
+       トレーナーKozy氏の写真：600×800px以上（縦長）
+
+    ③ images/group.jpg
+       グループ写真：仲間で歌う楽しい雰囲気
+
+    ④ images/venue.jpg
+       会場写真：パセラリゾート銀座 内装
+
+    ⑤ images/lesson.jpg
+       レッスン中の写真：指導シーン
+
+    ⑥ images/concept.jpg
+       コンセプト写真：ライブ感・エネルギー感のあるもの
+
+    ファイルを置くと自動的に写真が表示され、
+    プレースホルダーが消えます。
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    */
+</script>
+</body>
+</html>
